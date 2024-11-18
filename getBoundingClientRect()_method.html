@@ -1,0 +1,39 @@
+<!-- getBoundingClientRect(): The getBoundingClientRect() method is a JavaScript
+method that is used to retrieve the position and dimensions of an element
+relative to the viewport (the visible area of a web page). It returns a DOMRect
+object containing properties like top, left, right, bottom, width, and height,
+which describe the position and size of the element. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http - equiv="X - UA - Compatible" content="IE = edge" />
+    <meta
+      name="viewport"
+      content="width = device - width, initial - scale = 1.0"
+    />
+    <title>Document</title>
+
+    <style>
+      #hello {
+        height: 100px;
+        width: 150px;
+        position: absolute;
+        top: 20px;
+        left: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="hello">Hello</div>
+
+    <script>
+      let helloDiv = document.querySelector("#hello");
+
+      const results = helloDiv.getBoundingClientRect();
+      console.log(results);
+      
+    </script>
+  </body>
+</html>

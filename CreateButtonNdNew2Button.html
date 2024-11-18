@@ -1,0 +1,60 @@
+<!-- Problem Statement 
+Create a web application feature where clicking a button
+causes it to be removed from the page, and simultaneously, two new buttons are
+created and added to the page in its place. -->
+
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset = "UTF - 8" />
+    <meta http-equiv = "X - UA - Compatible" content = "IE = edge" />
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id = "doubleHolder">
+      <button class = "double">double</button>
+    </div>
+
+    <script>
+      //    Q Create a button that is destroyed by clicking on it but two new buttons are created in it's place.
+
+      // Select the element with the ID "doubleHolder" and add a click event listener to it
+   document.querySelector("#doubleHolder").addEventListener("click", function (e) 
+   {
+    
+        // Check if the element that triggered the event has the class "double"
+        if (e.target.classList.contains("double")) 
+        {
+            // Create a new <button> element and assign it to the variable btn
+            let btn = document.createElement("button");
+
+            // Set the class of btn to "first-button"
+            btn.setAttribute("class", "first-button");
+
+            // Set the inner HTML of btn to display the text "first button"
+            btn.innerHTML = "first button";
+
+            // Create a second <button> element and assign it to the variable btn2
+            let btn2 = document.createElement("button");
+
+            // Set the class of btn2 to "second-button"
+            btn2.setAttribute("class", "second-button");
+
+            // Set the inner HTML of btn2 to display the text "second button"
+            btn2.innerHTML = "second button";
+
+            // Append btn (the first button) to the element that triggered the event (e.currentTarget)
+            e.currentTarget.appendChild(btn);
+
+            // Append btn2 (the second button) to the same element that triggered the event
+            e.currentTarget.appendChild(btn2);
+
+            // Remove the element that was clicked (the original "double" button) from e.currentTarget
+            e.currentTarget.removeChild(e.target);
+        }
+  });
+
+    </script>
+  </body>
+</html>
